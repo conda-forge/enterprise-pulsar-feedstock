@@ -1,5 +1,5 @@
 {% set name = "enterprise-pulsar" %}
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/enterprise-pulsar-{{ version }}.tar.gz
-  sha256: ddc6242bcb9581bd0b1d2bacb4912b64b4e38230b6f26f613f0b3846773bee9a
+  sha256: 9d6fa59b007a7f895b78318ba88701206a64aacbd5f5be577b9bbe32df4c4152
 
 build:
   number: 0
@@ -18,9 +18,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.6,<3.10
   run:
-    - python >=3.6
+    - python >=3.6,<3.10
     - ephem >=3.7.6.0
     - healpy >=1.14.0
     - libstempo >=2.4.0
