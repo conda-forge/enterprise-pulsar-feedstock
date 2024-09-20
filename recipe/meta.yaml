@@ -1,5 +1,5 @@
 {% set name = "enterprise-pulsar" %}
-{% set version = "3.3.2" %}
+{% set version = "3.4.2" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/enterprise-pulsar-{{ version }}.tar.gz
-  sha256: c313d3319029bdae06639bf7e2711ab8fc49cab848c05fd1df973f020ee171d1
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2577e2e84171ce25d1c490604c2ad7e5ea0ec58b5c838a45474b98e78d73e08c
 
 build:
   number: 0
