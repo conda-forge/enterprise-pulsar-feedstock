@@ -7,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 2577e2e84171ce25d1c490604c2ad7e5ea0ec58b5c838a45474b98e78d73e08c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7,<3.11
+    - python {{ python_min }}
   run:
-    - python >=3.7,<3.11
+    - python >={{ python_min }},<3.11
     - ephem >=3.7.6.0
     - healpy >=1.14.0
     - libstempo >=2.4.0
@@ -30,6 +30,8 @@ requirements:
     - scipy >=1.2.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - enterprise
     - enterprise.signals
