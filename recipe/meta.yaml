@@ -11,19 +11,19 @@ source:
   sha256: 2577e2e84171ce25d1c490604c2ad7e5ea0ec58b5c838a45474b98e78d73e08c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7,<3.11
+    - python >=3.8,<3.13
   run:
-    - python >=3.7,<3.11
+    - python >=3.8,<3.13
     - ephem >=3.7.6.0
     - healpy >=1.14.0
-    - libstempo >=2.4.0
+    - libstempo >=2.4.4
     - numpy >=1.16.3
     - pint-pulsar >=0.8.3
     - scikit-sparse >=0.4.5
