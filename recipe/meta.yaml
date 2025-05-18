@@ -1,6 +1,7 @@
 {% set name = "enterprise-pulsar" %}
 {% set version = "3.4.4" %}
 {% set python_min = "3.9" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -17,22 +18,20 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
     - setuptools
-    - python {{ python_min }}
   run:
-    - python >={{ python_min }}
+    - python >={{ python_min }}, <={{ python_max }}
     - ephem >=3.7.6.0
     - healpy >=1.14.0
-    - libstempo >=2.4.4
     - numpy >=1.16.3
-    - pint-pulsar >=0.8.3
     - scikit-sparse >=0.4.5
     - scipy >=1.2.0
 
 test:
   requires:
-    - python {{ python_min }}
+    - python {{ python_min }}, <={{ python_max }}
   imports:
     - enterprise
     - enterprise.signals
