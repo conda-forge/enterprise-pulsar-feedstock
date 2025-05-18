@@ -22,7 +22,7 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >={{ python_min }}, <={{ python_max }}
+    - python >={{ python_min }},<={{ python_max }}
     - ephem >=3.7.6.0
     - healpy >=1.14.0
     - numpy >=1.16.3
@@ -31,7 +31,7 @@ requirements:
 
 test:
   requires:
-    - python {{ python_min }}, <={{ python_max }}
+    - python {{ python_min }}
   imports:
     - enterprise
     - enterprise.signals
