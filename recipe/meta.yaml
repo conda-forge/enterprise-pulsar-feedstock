@@ -1,7 +1,7 @@
 {% set name = "enterprise-pulsar" %}
-{% set version = "3.4.4" %}
-{% set python_min = "3.9" %}
-{% set python_max = "3.12" %}
+{% set version = "3.5.0" %}
+{% set python_min = "3.10" %}
+{% set python_max = "3.14" %}
 
 package:
   name: {{ name|lower }}
@@ -54,3 +54,4 @@ extra:
     - jellis18
     - Hazboun6
     - paulthebaker
+    - astrolamb
